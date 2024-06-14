@@ -1,0 +1,60 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dF:/Military Period/ALU
+vALU
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+!s110 1718354245
+!i10b 1
+!s100 WV0lbCBcH0koXGBmVH<[b1
+IlW[PI:;3Mcf:>=WFQT4Qk1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 ALU_des_sv_unit
+S1
+R0
+w1718354233
+8ALU_des.sv
+FALU_des.sv
+L0 2
+Z3 OL;L;10.6c;65
+r1
+!s85 0
+31
+!s108 1718354245.000000
+!s107 ALU_des.sv|
+!s90 ALU_des.sv|
+!i113 0
+Z4 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z5 tCvgOpt 0
+n@a@l@u
+YIF
+R1
+!s110 1718353755
+!i10b 1
+!s100 Y0GMn1aGfH`[oRKaLdSed0
+IRYjnGn?e4X?8_acm8Dg_b2
+R2
+!s105 ALU_IF_sv_unit
+S1
+R0
+w1718353747
+8ALU_IF.sv
+FALU_IF.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1718353754.000000
+!s107 ALU_IF.sv|
+!s90 ALU_IF.sv|
+!i113 0
+R4
+R5
+n@i@f
