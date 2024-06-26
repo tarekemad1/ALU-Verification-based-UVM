@@ -10,7 +10,7 @@ interface IF(input bit clk );
     bit     [7:0]alu_in_b;
     logic        alu_irq_clr;
     logic        alu_irq;
-    logic  [7:0] alu_out;
+    bit     [7:0] alu_out;
     
     clocking cb @(posedge clk );
             output alu_enable;
@@ -27,4 +27,9 @@ interface IF(input bit clk );
     modport DUT (input rst_n ,alu_enable,alu_enable_a,alu_enable_b,alu_op_a,alu_op_b,alu_in_a,alu_in_b,alu_irq_clr,
                  output alu_irq , alu_out);
     modport tb  (clocking cb ,output rst_n);
+    function void reset;    
+        alu_out = 'b0; 
+        alu_irq = 'b0;
+    endfunction
+
 endinterface
