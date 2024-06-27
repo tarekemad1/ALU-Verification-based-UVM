@@ -1,4 +1,6 @@
-      class sequence_item extends uvm_sequence_item;
+   typedef enum bit[1:0] {AND,NAND,OR,XOR} operation_a;
+    typedef enum bit[1:0] {XNOR,AND_OP_B,NOR,OR_OP_B} operation_b;
+        class sequence_item extends uvm_sequence_item;
 
         `uvm_object_utils(sequence_item);
 
@@ -9,6 +11,7 @@
         rand bit[7:0] in_a;
         rand bit[7:0] in_b;
         bit     [7:0] out_alu;
+        bit      rst_n =1'b1 ;
         rand operation_a op_a;
         rand operation_b op_b;
         rand bit mode_a; 
@@ -20,6 +23,10 @@
         constraint OP_B{
             op_b==AND_OP_B   -> in_b!='h03;
             op_b==NOR        -> in_a!='hF5;
+        }
+        constraint modes{
+            mode_a!=mode_b; 
+            
         }
         function void do_copy(uvm_object rhs);
             sequence_item RHS; 
