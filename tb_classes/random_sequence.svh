@@ -1,10 +1,10 @@
-    class rndm_sequence extends uvm_sequence#(sequence_item);
+    class random_sequence extends uvm_sequence#(sequence_item);
 
-        `uvm_object_utils(rndm_sequence);
+        `uvm_object_utils(random_sequence);
 
         sequence_item command; 
 
-        function new(string name ="rndm_sequence");
+        function new(string name ="random_sequence");
             super.new(name);
         endfunction
         task body();
