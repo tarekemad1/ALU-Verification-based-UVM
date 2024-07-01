@@ -21,7 +21,7 @@ class command_monitor extends uvm_component;
         vif.command_monitor_h = this ; 
     endfunction
 
-    function void write_to_monitor(logic alu_enable_a ,logic alu_enable_b,bit[1:0]alu_op_a, bit[1:0] alu_op_b , bit [7:0]alu_in_a , bit [7:0]alu_in_b);
+    function void write_to_monitor(logic alu_enable_a ,logic rst_n,logic alu_enable_b,bit[1:0]alu_op_a, bit[1:0] alu_op_b , bit [7:0]alu_in_a , bit [7:0]alu_in_b);
 
         sequence_item command ;
         command  =new("command");
@@ -31,6 +31,7 @@ class command_monitor extends uvm_component;
         command.op_b   = op2enum_modeB(alu_enable_b,alu_op_b)    ; 
         command.in_a   = alu_in_a    ; 
         command.in_b   = alu_in_b    ; 
+        command.rst_n  = rst_n       ;
         ap.write(command);
     endfunction
    /*typedef enum bit[1:0] {AND,NAND,OR,XOR} operation_a;

@@ -19,4 +19,5 @@ package alu_pkg;
     `include "scoreboard.svh"
     `include "command_monitor.svh"
     `include "result_monitor.svh"
+    `include "driver.svh"
 endpackage 

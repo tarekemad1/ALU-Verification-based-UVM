@@ -11,7 +11,7 @@
         rand bit[7:0] in_a;
         rand bit[7:0] in_b;
         bit     [7:0] out_alu;
-        bit      rst_n =1'b1 ;
+        bit          rst_n =1'b1 ;
         bit         alu_enable =1'b1 ;
         rand operation_a op_a;
         rand operation_b op_b;
