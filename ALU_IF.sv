@@ -32,11 +32,7 @@ interface IF(input bit clk );
         alu_irq = 'b0;
     endfunction
 
-<<<<<<< Updated upstream
-    task send_op(input bit reset_n , input bit alu_enable_t ,input bit mode_a ,input bit mode_b ,
-=======
-    task send_op(input bit rst_n ,input bit alu_enable ,input bit mode_a ,input bit mode_b ,
->>>>>>> Stashed changes
+    task send_op(input bit reset_n ,input bit alu_enable_t ,input bit mode_a ,input bit mode_b ,
                  input operation_a op_a , input operation_b op_b,input bit[7:0] in_a ,
                  input bit[7:0] in_b,output bit[7:0] alu_out_t);
 
