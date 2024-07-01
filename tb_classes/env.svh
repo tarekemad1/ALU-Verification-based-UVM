@@ -1,4 +1,4 @@
-
+//typedef uvm_sequencer#(sequence_item) sequencer;
 class env extends uvm_env;
     `uvm_component_utils(env);
     sequencer sequencer_h; 

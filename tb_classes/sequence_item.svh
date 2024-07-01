@@ -12,6 +12,7 @@
         rand bit[7:0] in_b;
         bit     [7:0] out_alu;
         bit      rst_n =1'b1 ;
+        bit         alu_enable =1'b1 ;
         rand operation_a op_a;
         rand operation_b op_b;
         rand bit mode_a; 
@@ -69,6 +70,7 @@
                 s= {super.convert2string(),$sformatf("Mode(A)=%0d   Mode(B)=%0d     A=%0h   B=%0h   ALU_OUT=%0h
                                                     OP_A=%s    OP_B=%s",mode_a,mode_b,in_a,in_b,out_alu,op_a.name()
                                                     ,op_b.name())};
+                    return s ;
             endfunction:convert2string
             
         
