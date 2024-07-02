@@ -4,7 +4,14 @@ package alu_pkg;
     `include "sequence_item.svh"
      typedef uvm_sequencer#(sequence_item) sequencer;
     
-    `include "env.svh"
+    `include "result_transaction.svh"
+    `include "scoreboard.svh"
+    `include "command_monitor.svh"
+    `include "result_monitor.svh"
+    `include "driver.svh"
+    `include "config_agent.svh"
+    `include "agent.svh"
+    `include "env.svh"    
     `include "base_test.svh"
     `include "reset_sequence.svh"
     `include "mode_a_sequence.svh"
@@ -15,9 +22,7 @@ package alu_pkg;
     `include "mode_b_test.svh"
     `include "random_test.svh"
     `include "runall_test.svh"
-    `include "result_transaction.svh"
-    `include "scoreboard.svh"
-    `include "command_monitor.svh"
-    `include "result_monitor.svh"
-    `include "driver.svh"
+    
+
+
 endpackage 
