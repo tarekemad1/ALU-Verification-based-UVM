@@ -27,7 +27,6 @@
         }
         constraint modes{
             mode_a!=mode_b; 
-            
         }
         function void do_copy(uvm_object rhs);
             sequence_item RHS; 

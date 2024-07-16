@@ -1,4 +1,4 @@
-class scoreboard extends uvm_subscriber#(result_transaction);
+class scoreboard extends uvm_subscriber #(result_transaction);
 
     `uvm_component_utils(scoreboard);
     uvm_tlm_analysis_fifo#(sequence_item) cmd_fifo ;

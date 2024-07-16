@@ -1,6 +1,8 @@
-class driver extends uvm_driver#(sequence_item);
+class driver extends uvm_driver #(sequence_item);
 
     `uvm_component_utils(driver);
+    
+    
     virtual IF vif ; 
     function new(string name , uvm_component parent);
         super.new(name,parent);
@@ -17,7 +19,8 @@ class driver extends uvm_driver#(sequence_item);
 
         sequence_item cmd ;
 
-        forever begin 
+        forever 
+        begin 
         bit[7:0] result ;
         seq_item_port.get_next_item(cmd);
 

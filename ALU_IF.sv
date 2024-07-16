@@ -68,5 +68,9 @@ interface IF(input bit clk );
            result_monitor_h.write_to_monitor(alu_out) ;
         end
     end :monitor_result
+    always @(posedge clk ) begin : interrupt_raising 
+        
+    end :interrupt_raising
+    
 
 endinterface
