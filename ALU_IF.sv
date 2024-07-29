@@ -71,6 +71,69 @@ interface IF(input bit clk );
     always @(posedge clk ) begin : interrupt_raising 
         
     end :interrupt_raising
+        sequence seq_alu_op_a_00;
+        (alu_enable && alu_enable_a && (alu_op_a == 2'b00) ##1 alu_out ==(8'hFF));
+    endsequence :seq_alu_op_a_00
+
+    sequence seq_alu_op_a_01;
+        (alu_enable && alu_enable_a && (alu_op_a == 2'b01) ##1 alu_out ==(8'h00));
+    endsequence :seq_alu_op_a_01
+
+    sequence seq_alu_op_a_10;
+        (alu_enable && alu_enable_a && (alu_op_a == 2'b10) ##1 alu_out ==(8'hF8));
+    endsequence :seq_alu_op_a_10
+
+    sequence seq_alu_op_a_11;
+        (alu_enable && alu_enable_a && (alu_op_a == 2'b11) ##1 alu_out ==(8'h83));
+    endsequence
+    ASSERT_MODE_A_OP_00: assert property (@(posedge clk) disable iff (!rst_n) seq_alu_op_a_00 |-> alu_irq)
+        else $error("Assertion ASSERT_MODE_A_OP_00 failed!");
+    ASSERT_MODE_A_OP_01: assert property (@(posedge clk) disable iff (!rst_n) seq_alu_op_a_01 |-> alu_irq) 
+        else $error("Assertion ASSERT_MODE_A_OP_01 failed!");
+    ASSERT_MODE_A_OP_10: assert property(@(posedge clk) disable iff (!rst_n) seq_alu_op_a_10  |-> alu_irq)
+        else $error("Assertion ASSERT_MODE_A_OP_10 failed! property");
+    ASSERT_MODE_A_OP_11: assert property (@(posedge clk) disable iff (!rst_n) seq_alu_op_a_11 |-> alu_irq)
+        else $error("Assertion ASSERT_MODE_A_OP_11 failed!");
     
+    property interrupt_releasing;
+        @(posedge clk) disable iff(!rst_n)
+        alu_irq_clr ##1 !alu_irq;
+    endproperty
+
+    ASSERT_INTERRUPT_RELEASING: assert property (interrupt_releasing)
+        else $error("Assertion INTERRUPT_RELEASING failed!");
+
+    sequence seq_alu_op_b_00;
+        (alu_enable && alu_enable_b && (alu_op_b == 2'b00) ##1 alu_out ==(8'hF1));
+    endsequence :seq_alu_op_b_00
+
+    sequence seq_alu_op_b_01;
+        (alu_enable && alu_enable_b && (alu_op_b == 2'b01) ##1 alu_out ==(8'hF4));
+    endsequence :seq_alu_op_b_01
+
+    sequence seq_alu_op_b_10;
+        (alu_enable && alu_enable_b && (alu_op_b == 2'b10) ##1 alu_out ==(8'hF5));
+    endsequence :seq_alu_op_b_10
+
+    sequence seq_alu_op_b_11;
+        (alu_enable && alu_enable_b && (alu_op_b == 2'b11) ##1 alu_out ==(8'hFF));
+    endsequence : seq_alu_op_b_11
+
+     ASSERT_MODE_B_OP_00: assert property (@(posedge clk) disable iff (!rst_n) seq_alu_op_b_00 |-> alu_irq)
+        else $error("Assertion ASSERT_MODE_B_OP_00 failed!");
+    ASSERT_MODE_B_OP_01: assert property (@(posedge clk) disable iff (!rst_n) seq_alu_op_b_01 |-> alu_irq) 
+        else $error("Assertion ASSERT_MODE_B_OP_01 failed!");
+    ASSERT_MODE_B_OP_10: assert property(@(posedge clk) disable iff (!rst_n) seq_alu_op_b_10  |-> alu_irq)
+        else $error("Assertion ASSERT_MODE_B_OP_10 failed! property");
+    ASSERT_MODE_B_OP_11: assert property (@(posedge clk) disable iff (!rst_n) seq_alu_op_b_11 |-> alu_irq)
+        else $error("Assertion ASSERT_MODE_B_OP_11 failed!");
+    
+
+    always @(posedge clk ) begin : release_interrupt
+        if(alu_irq & rst_n) begin 
+        alu_irq_clr <=1'b0;
+        #400 alu_irq_clr <= 1'b1;
+        end 
+    end:release_interrupt
 
 endinterface
