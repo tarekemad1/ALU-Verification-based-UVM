@@ -1,0 +1,83 @@
+QuestaSim-64 vcover 10.6c Coverage Utility 2017.07 Jul 26 2017
+Start time: 12:11:59 on Aug 11,2024
+vcover report full_test.ucdb -cvg -details 
+COVERGROUP COVERAGE:
+-----------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal    Status               
+                                                                                              
+-----------------------------------------------------------------------------------------------
+ TYPE /alu_pkg/coverag/ALU_SIGNALS                     100.0%        100    Covered              
+    covered/total bins:                                    30         30                      
+    missing/total bins:                                     0         30                      
+    % Hit:                                             100.0%        100                      
+    Coverpoint ALU_SIGNALS::RESEST                     100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+        bin RESET_ACTIV                                    14          1    Covered              
+        bin RESET_DEACTIVE                                187          1    Covered              
+    Coverpoint ALU_SIGNALS::GENERAL_ENABLE             100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+        bin ALU_EN                                        198          1    Covered              
+        bin ALU_NOT_EN                                      3          1    Covered              
+    Coverpoint ALU_SIGNALS::MODE_A                     100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+        bin EN_MODE_A                                     100          1    Covered              
+        bin NOT_EN_MODE_A                                 101          1    Covered              
+    Coverpoint ALU_SIGNALS::MODE_B                     100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+        bin EN_MODE_B                                     100          1    Covered              
+        bin NOT_EN_MODE_B                                 101          1    Covered              
+    Coverpoint ALU_SIGNALS::OPERATION_A                100.0%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                         100.0%        100                      
+        bin AND                                           126          1    Covered              
+        bin NAND                                           25          1    Covered              
+        bin OR                                             23          1    Covered              
+        bin XOR                                            27          1    Covered              
+    Coverpoint ALU_SIGNALS::OPERATION_B                100.0%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                         100.0%        100                      
+        bin XNOR                                          121          1    Covered              
+        bin AND                                            27          1    Covered              
+        bin NOR                                            32          1    Covered              
+        bin OR                                             21          1    Covered              
+    Coverpoint ALU_SIGNALS::IN_A                       100.0%        100    Covered              
+        covered/total bins:                                 6          6                      
+        missing/total bins:                                 0          6                      
+        % Hit:                                         100.0%        100                      
+        bin auto[0:41]                                     29          1    Covered              
+        bin auto[42:83]                                    37          1    Covered              
+        bin auto[84:125]                                   37          1    Covered              
+        bin auto[126:167]                                  40          1    Covered              
+        bin auto[168:209]                                  30          1    Covered              
+        bin auto[210:255]                                  28          1    Covered              
+    Coverpoint ALU_SIGNALS::IN_B                       100.0%        100    Covered              
+        covered/total bins:                                 6          6                      
+        missing/total bins:                                 0          6                      
+        % Hit:                                         100.0%        100                      
+        bin auto[0:41]                                     36          1    Covered              
+        bin auto[42:83]                                    32          1    Covered              
+        bin auto[84:125]                                   33          1    Covered              
+        bin auto[126:167]                                  25          1    Covered              
+        bin auto[168:209]                                  33          1    Covered              
+        bin auto[210:255]                                  42          1    Covered              
+    Coverpoint ALU_SIGNALS::INTRBT_CLEAR               100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+        bin interrupt_clear                               105          1    Covered              
+        bin NOT_interrupt_clear                            96          1    Covered              
+ CLASS coverag
+
+TOTAL COVERGROUP COVERAGE: 100.0%  COVERGROUP TYPES: 1
+End time: 12:11:59 on Aug 11,2024, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
