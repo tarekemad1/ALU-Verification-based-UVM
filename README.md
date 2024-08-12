@@ -78,6 +78,8 @@ Environment Setup:
 
 Implement a UVM (Universal Verification Methodology) based testbench, including:
 
+
+
     Drivers: To stimulate the ALU inputs.
 
     Monitors: To observe and capture the ALU output responses.
@@ -97,6 +99,8 @@ Implement a UVM (Universal Verification Methodology) based testbench, including:
 
 Tools & Technologies
 
+
+
     SystemVerilog
 
     UVM (Universal Verification Methodology)
@@ -107,6 +111,8 @@ Tools & Technologies
 
 
 Results
+
+
 
     Functional Coverage: Ensure all operations and edge cases are verified.
 
